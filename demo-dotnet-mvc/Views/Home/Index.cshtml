@@ -1,18 +1,20 @@
 ﻿@model PythagoreanSolver //why is this here? This is the model that will be used in the view to bind data and perform operations related to solving the Pythagorean theorem.
+
 @{
     ViewData["Title"] = "Pythagorean Theorem Solver"; // This sets the title of the page to "Pythagorean Theorem Solver" which can be used in the layout or for display purposes.
 }
 <h1>Hypotenuse solver</h1>
+<div asp-validation-summary="All"></div>
 <form asp-action="index" method="post"> @*this form will post data to the Index action of the HomeController. 
     asp-action specifies the action method to which the form will be submitted. method="post" indicates that 
     the form will use the HTTP POST method to send data to the server.*@
     <div>
         <label for="sideA">Side A:</label>
-        <input type="number" asp-for="SideA" step="any" required /> @*This creates an input field for the user to enter the length 
+        <input type="number" asp-for="SideA" step="any"  /> @*This creates an input field for the user to enter the length 
         of side A. The "required" attribute ensures that the user must fill out this field before submitting the form.*@
         <br />
         <label for="sideB">Side B:</label>
-        <input type="number" asp-for="SideB" step="any" required /> @*This creates an input field for the user to enter the length 
+        <input type="number" asp-for="SideB" step="any"  /> @*This creates an input field for the user to enter the length 
         of side B. The "required" attribute ensures that the user must fill out this field before submitting the form.*@
         <br />
         <button type="submit">Calculate Hypotenuse</button>

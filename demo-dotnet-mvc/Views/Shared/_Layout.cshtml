@@ -4,10 +4,12 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
 </head>
 <body>
     <div>
-        <a href="/">Home</a>
+        <a asp-controller="Home" asp-action="Index">Hypotenuse Solver</a> |
+        <a asp-controller="Triangle" asp-action="Index">Triangle Area Solver</a>
         @RenderBody()
     </div>
 </body>

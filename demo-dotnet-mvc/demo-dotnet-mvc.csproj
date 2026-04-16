@@ -7,8 +7,4 @@
     <RootNamespace>demo_dotnet_mvc</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\" />
-  </ItemGroup>
-
 </Project>

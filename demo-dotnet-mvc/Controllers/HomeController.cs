@@ -23,7 +23,14 @@ namespace demo_dotnet_mvc.Controllers
         [HttpPost]
                 public IActionResult Index(PythagoreanSolver myTriangle)
         {
-            ViewBag.Hypotenuse = myTriangle.CalculateHypotenuse(); // Calculate the hypotenuse using the model and pass it to the view.
+            if (!ModelState.IsValid)
+            {
+                return View(myTriangle); // If the model state is not valid, return the view with the current model to display validation errors.
+            }
+            else
+            {
+                ViewBag.Hypotenuse = myTriangle.CalculateHypotenuse(); // Calculate the hypotenuse using the model and pass it to the view.
+            }
             return View(myTriangle);
         }
     }
