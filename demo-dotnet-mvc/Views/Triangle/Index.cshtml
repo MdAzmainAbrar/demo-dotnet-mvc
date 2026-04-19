@@ -4,16 +4,16 @@
 <div asp-validation-summary="All"></div>
 <form asp-action="index" method="post">
     <div>
-        <label for="sideA">Side A:</label>
+        <label for="Base">Side A:</label>
         <input type="number" asp-for="Base" step="any" /> @*This creates an input field *@
         <br />
-        <label for="sideB">Side B:</label>
+        <label for="Height">Side B:</label>
         <input type="number" asp-for="Height" step="any" /> @*This creates an input field*@
         <br />
         <button type="submit">Calculate Triangle Area</button>
         <br />
-        <label>Hypotenuse:</label>
-        <input value="@ViewBag.Hypotenuse?.ToString()" readonly /> @*This creates an input field *@
+        <label>TriangleArea:</label>
+        <input value="@ViewBag.TriangleArea?.ToString()" readonly /> @*This creates an input field *@
 
         
         
