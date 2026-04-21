@@ -19,7 +19,8 @@ namespace demo_dotnet_mvc.Controllers
             }
             else
             {
-                ViewBag.Hypotenuse = myTriangle.CalculateArea(); // Calculate the area using the model and pass it to the view.
+                ViewBag.TriangleArea = myTriangle.CalculateArea(); // Calculate the area using the model and pass it to the view.
+            
             }
             return View(myTriangle);
         }
