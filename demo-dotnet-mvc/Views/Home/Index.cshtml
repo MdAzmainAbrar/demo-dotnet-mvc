@@ -3,26 +3,36 @@
 @{
     ViewData["Title"] = "Pythagorean Theorem Solver"; // This sets the title of the page to "Pythagorean Theorem Solver" which can be used in the layout or for display purposes.
 }
-<h1>Hypotenuse solver</h1>
-<div asp-validation-summary="All"></div>
-<form asp-action="index" method="post"> @*this form will post data to the Index action of the HomeController. 
+<h1 class="text-2xl text-indigo-600 text-center font-extrabold">Hypotenuse Solver</h1>
+
+<form asp-action="index" method="post">
+    @*this form will post data to the Index action of the HomeController.
     asp-action specifies the action method to which the form will be submitted. method="post" indicates that 
     the form will use the HTTP POST method to send data to the server.*@
-    <div>
-        <label for="sideA">Side A:</label>
-        <input type="number" asp-for="SideA" step="any"  /> @*This creates an input field for the user to enter the length 
-        of side A. The "required" attribute ensures that the user must fill out this field before submitting the form.*@
-        <br />
-        <label for="sideB">Side B:</label>
-        <input type="number" asp-for="SideB" step="any"  /> @*This creates an input field for the user to enter the length 
-        of side B. The "required" attribute ensures that the user must fill out this field before submitting the form.*@
-        <br />
-        <button type="submit">Calculate Hypotenuse</button>
-        <br />
-        <label>Hypotenuse:</label>
-        <input value="@ViewBag.Hypotenuse?.ToString()" readonly /> @*This creates an input field to display the calculated hypotenuse. The value is set to the Hypotenuse property from the ViewBag, which is calculated in the controller after the form is submitted.*@
+    
+    <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+        <div class="sm:col-span-6">
+            <div asp-validation-summary="All" class="text-red-600"></div>
+        </div>
 
-        
-        
+            <div class="sm:col-span-3"
+                <label for="sideA" class="block text-sm/6 font-medium text-indigo-600">Side A:</label>
+                <input id="sideA" type="number" asp-for="SideA" class="block w-full rounded-md bg-white px-3 py-1.5 text-base\/7 text-gray-900 outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 text-sm\/6"  />
+            </div>
+
+            <div class="sm:col-span-3"
+                <label for="sideB" class="block text-sm/6 font-medium text-indigo-600">Side B:</label>
+                <input id="sideB" type="number" asp-for="SideB" step="any" class="block w-full rounded-md bg-white px-3 py-1.5 text-base\/7 text-gray-900 outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 text-sm\/6 "  /> @*This creates an input field for the user to enter the length
+            of side B. The "required" attribute ensures that the user must fill out this field before submitting the form.*@
+            </div>
+            
+            <div class="sm:col-span-6">
+            <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:gb-indigo-700" focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600>Calculate Hypotenuse</button>
+            </div>
+            <div class="sm:col-span-6">
+                <label class="text-sm/6" font-medium text-indigo-600>Hypotenuse:</label>
+                <input value="@ViewBag.Hypotenuse?.ToString()" readonly /> @*This creates an input field to display the calculated hypotenuse. The value is set to the Hypotenuse property from the ViewBag, which is calculated in the controller after the form is submitted.*@
+            </div>
     </div>
+
 </form>
